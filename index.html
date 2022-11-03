@@ -1,0 +1,364 @@
+<!--
+    over 500 lines (between all files) of messy code
+    Personalised comments aren't bad,
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Brilliant Books</title>
+
+        <!--
+            The link tags below contains links to fonts from Google Fonts
+            I have also included an icon set from Font Awesome
+            All CSS is stored in style.css
+        -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/3b9c5fd033.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+        <!--
+            The header container essentially "contains" everything.
+            It acts as the parent DIV element to make changes globally across
+            all elements in its scope.
+        -->
+        <div class="header-container">
+            <header>
+
+                <!--
+                    This displays the logo stored in the images file.
+                    Clicking on the logo redirects you to the home page.
+                    Line 41 creates a search box, with a placeholder attribute to
+                    display placeholder text
+                -->
+                <a href="index.html">
+                    <img src="images/booklogo.png" alt="bblogo">
+                </a>
+                <input type="text" placeholder="Search...">
+                
+                <!-- 
+                    "i class=fas" is the icon set imported from Font Awesome
+                    as mentioned above. I will be using some of these later.
+                    Using an anchor tag over them allows the user to click the icons
+                    instead of having to click on the text to enter the next webpage
+                -->
+                <a href="#">
+                    <i class="fas fa-user fa-2x" id="user"></i>
+                        My Account
+                    </a>
+                <a href="#">
+                    <i class="fas fa-shopping-cart fa-2x"></i>
+                        Cart
+                </a>
+            </header>
+            
+
+            <!-- 
+                Basic navigation menu created with NAV
+                nav elements CAN be in a header element
+                i just chose not to
+            -->
+            <nav class="main-nav">
+                <a href="#">New</a>
+                <a href="#">Browse By Genre</a>
+                <a href="#">Trending</a>
+                <a href="#">Fiction</a>
+                <a href="#">Non-Fiction</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+        
+
+        <!-- 
+            LOTS OF DIV TAGS - is hardly readable and I may have added 
+            some redundant DIV tags
+
+            as mentioned before, the container acts as a parent element
+            and contains everything. It can be used to make changes globally
+            within its scope, most notably - setting a margin for all elements
+            to be positioned relative to the container.
+
+            bookcontent acts as pseudo-container. It contains ALL of the actual content.
+            bookcontent makes changes across elements contained within it.
+
+            galleryinner contains the row of images within the page
+            (i could've named this better)
+
+            gallery itself contains the book's image and description
+
+            caption contains the description of the book
+            (author, title, price)
+
+            most of the code under this container is repetitive and the same, so there won't be a lot of comments
+            i am not responsible for any damages towards your eyesight, if anyone reads this
+            I will only explain the first instance of the gallery class 
+        -->
+        <div class="container">
+            <section class="ss-container">
+                <div class="slideimage" id="slide1">
+                    <img src="images/slide1.png" alt="slide1">
+                </div>
+                <div class="slideimage" id="slide2">
+                    <img src="images/slide2.png" alt="slide2">
+                </div>
+                <div class="slideimage" id="slide3">
+                    <img src="images/slide3.png" alt="slide3">
+                </div>
+                <button id="previousbutton" onclick="controlSlide(-1)">&#10094;</button>
+                <button id="nextbutton" onclick="controlSlide(1)">&#10095;</button>
+            </section>
+            
+            <script type="text/javascript" src="slideshow.js"></script>
+
+            <section class="bookcontent">
+                <h1>LATEST HITS</h1>
+                    <div class="galleryinner">  
+                        <div class="gallery">
+                            <!--
+                                an anchor tag is used to encase the image and the description
+                                to act as a hyperlink that takes you to the books page.
+                            -->
+                            <a href="#">
+                                <img src="images/boywho.jpg" alt="boywho">
+                                <div class="caption">
+                                    <h2>The Boy Who Steals Houses</h2>
+                                    <p>C.G. Drews</p>
+
+                                    <!--
+                                        this p element will have its own specific class
+                                        to adjust its padding. This is done to 
+                                        emphasise the price above all details.
+                                    -->
+                                    <p class="price">£6.99</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="gallery">
+                            <a href="#">
+                                <img src="images/peacetalks.jpg" alt="peacetalks">
+                                <div class="caption">
+                                    <h2>Peace Talks: The Dresden Files</h2>
+                                    <p>Jim Butcher</p>
+                                    <p class="price">£9.99</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="gallery">
+                            <a href="#">
+                                <img src="images/cityoftears.jpg" alt="quietat">
+                                <div class="caption">
+                                    <h2>The City Of Tears</h2>
+                                    <p>Kate Mosse</p>
+                                    <p class="price">£5.99</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="gallery">
+                            <a href="#">
+                                <img src="images/thethree.jpg" alt="thethree">
+                                <div class="caption">
+                                    <h2>The Three-Body Problem</h2>
+                                    <p>Cinxin Liu</p>
+                                    <p class="price">£7.99</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <h1>NEW RELEASES</h1>
+                    <div class="galleryinner" id="new">  
+                        <div class="gallery">
+                            <a href="#">
+                                <img src="images/tosleepin.jpg" alt="boywho">
+                                <div class="caption">
+                                    <h2>To Sleep In A Sea Of Stars</h2>
+                                    <p>Christopher Paolini</p>
+                                    <p class="price">£8.99</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="gallery">
+                            <a href="#">
+                                <img src="images/wheretheworld.jpg" alt="peacetalks">
+                                <div class="caption">
+                                    <h2>Where The World Ends</h2>
+                                    <p>Geraldine McCaughrean</p>
+                                    <p class="price">£6.99</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="gallery">
+                            <a href="#">
+                                <img src="images/conkerthe.jpg" alt="quietat">
+                                <div class="caption">
+                                    <h2>Conker The Chameleon</h2>
+                                    <p>Hannah Peckham</p>
+                                    <p class="price">£4.99</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="gallery">
+                            <a href="#">
+                                <img src="images/cityoftears.jpg" alt="thethree">
+                                <div class="caption">
+                                    <h2>The City Of Tears</h2>
+                                    <p>Kate Mosse</p>
+                                    <p class="price">£5.99</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <h1>BEST SELLING FICTION</h1>
+                    <div class="galleryinner" id="new">  
+                        <div class="gallery">
+                            <a href="#">
+                                <img src="images/boywho.jpg" alt="boywho">
+                                <div class="caption">
+                                    <h2>The Boy Who Steals Houses</h2>
+                                    <p>C.G. Drews</p>
+                                    <p class="price">£6.99</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="gallery">
+                            <a href="#">
+                                <img src="images/silmarillion.jpg" alt="peacetalks">
+                                <div class="caption">
+                                    <h2>The Silmarillion</h2>
+                                    <p>J.R.R Tolkien</p>
+                                    <p class="price">£10.99</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="gallery">
+                            <a href="#">
+                                <img src="images/defiantspark.jpg" alt="quietat">
+                                <div class="caption">
+                                    <h2>The Defiant Spark</h2>
+                                    <p>Annie Percik</p>
+                                    <p class="price">£9.99</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="gallery">
+                            <a href="#">
+                                <img src="images/thebargainer.jpg" alt="thethree">
+                                <div class="caption">
+                                    <h2>The Bargainer</h2>
+                                    <p>Laura Thalassa</p>
+                                    <p class="price">£11.99</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <h1>BEST SELLING NON-FICTION</h1>
+                    <div class="galleryinner" id="new">  
+                        <div class="gallery">
+                            <a href="#">
+                                <img src="images/davidatten.jpg" alt="boywho">
+                                <div class="caption">
+                                    <h2>David Attenborough: Life Stories</h2>
+                                    <p>David Attenborough</p>
+                                    <p class="price">£11.99</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="gallery">
+                            <a href="#">
+                                <img src="images/theplanets.jpg" alt="peacetalks">
+                                <div class="caption">
+                                    <h2>The Planets</h2>
+                                    <p>Andrew Cohen</p>
+                                    <p class="price">£7.99</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="gallery">
+                            <a href="#">
+                                <img src="images/ourplanet.jpg" alt="quietat">
+                                <div class="caption">
+                                    <h2>Our Planet</h2>
+                                    <p>Matt Whyman</p>
+                                    <p class="price">£7.99</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="gallery">
+                            <a href="#">
+                                <img src="images/ispy.jpg" alt="thethree">
+                                <div class="caption">
+                                    <h2>I Spy: My Life In MI5</h2>
+                                    <p>Tom Marcus</p>
+                                    <p class="price">£5.99</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+            </section>
+        </div>
+            
+
+        <!--
+            Basic footer created using the footer element
+            This will serve as a secondary navigation menu
+            It uses anchor tags encased in li tags
+        -->
+        <footer>
+            <div class="footerinfo">
+                <h1>HELP & INFORMATION</h1>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Shops</a></li>
+                <li><a href="#">Delivery Information</a></li>
+                <li><a href="#">Gift Cards</a></li>
+            </div>
+
+            <!-- 
+                IDs are used to make specific changes to position
+                these elements using the margin property
+            -->
+            <div class="footerinfo" id="account">
+                <h1>ACCOUNT</h1>
+                <li><a href="#">My Account</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Track An Order</a></li>
+                <li><a href="#">Returns & Refunds</a></li>
+            </div>
+
+            <div class="footerinfo" id="contact">
+                <h1>CONTACT US</h1>
+                <p><a href="mailto:johndoe@brilliantbooks.com">johndoe@brilliantbooks.com</a></p>
+                <p>01632 960175</p>
+            </div>
+            
+            <!--
+                "i class="fab"" displays icons for respective
+                social media sites
+            -->
+            <div class="footerinfo" id="follow">
+                <h1>FOLLOW US</h1>
+                <a href="https://www.twitter.com"><i class="fab fa-twitter fa-2x"></a></i>
+                <a href="https://www.facebook.com"><i class="fab fa-facebook fa-2x"></a></i>
+                <a href="https://www.instagram.com"><i class="fab fa-instagram fa-2x"></a></i>
+            </div>
+
+            <!--
+                i didnt have to do this but i did it anyway
+            -->
+            <div class="copyright">
+                <i class="far fa-copyright"></i>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                    <p>Copyright 2021-2021 Brilliant Books. All rights reserved.</p>
+                </a>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,594 @@
+/* 
+This contains a ton of redundant properties
+
+body globally resets the margins of everything to 0
+*/
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* CONTAINER */
+/*
+ This allows me to centralise elements using a 10% margin offset
+ on the left and right side.
+*/
+
+.container {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/* HEADER */
+/* 
+    using display: flex, alongside justify-content: center
+    and align-items: center, i can position elements to the center while
+    remaining inline.
+    padding allows me to cover the top of the page, using it as the header's space
+    background-colour sets that space into black
+*/
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: black;
+}
+
+/*
+    moves the header image (logo) to the left
+    with a padding of 20px and specified width
+    of 150px
+*/
+header img {
+    float: left;
+    width: 150px;
+    padding-right: 20px;
+}
+
+/*
+    this refers to the search box on the header
+    width and height refers to the search box's width and height
+
+    font-family specifies the font it will use on the placeholder text
+    and the user's input. other font related properties include size and weight
+    I use the Roboto font - imported from the Google Fonts website.
+
+
+    margin-left and right are set to 5% to slightly distance itself from the logo and anchor tags
+*/
+header input {
+    height: 35px;
+    width: 550px;
+    font-family: 'Roboto', sans-serif;
+    font-size: large;
+    font-weight: bold;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+/*
+    This changes properties of the "My Account" and Shopping Cart links
+    letter-spacing adjusts the spacing between letters. using -2px narrows it down.
+    text-decoration: none removes the underline over hyperlinks
+    text-align centers the text at a block level (could be worded better)
+    "Lexend Mega" is another font imported from Google Fonts
+
+    transition in this case refers to when the user hovers over the element
+    if the user hovers over the anchor tag, it transitions into the a:hover pseudo-selector state
+    this transition property defines how long it takes to transition between both states
+    "ease" makes the transition smoother
+*/
+
+header a {
+    font-family: 'Lexend Mega', sans-serif;
+    letter-spacing: -2px;
+    padding: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.2s ease;
+}
+
+/*
+    visited header links stay white instead of the default purple
+*/
+
+header a:visited {
+    color: white;
+}
+
+/*
+    anchor tag (text) turns blue when hovered
+*/
+
+header a:hover {
+    color: #53E2FF;
+}
+
+/* MAIN NAVIGATION */
+
+
+/*
+    display: flex, justify-content: center and align-items: center, centers all of the nav (li) elements
+    overflow: hidden disables the scroll bar that appears on navigation bars
+    padding-bottom adds an extra 10px space under the navigation bar
+*/
+.main-nav {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+
+/*
+    This modifies the anchor tags itself
+    padding centers the text on the middle of the "bar"
+    font-size, family, letter-spacing modifies the text on the anchor tags
+    border: 1px creates a border of 1px with a solid style
+
+    transition is used here, so that when the user hovers
+    over the "bar", it fades into black. when the user moves their
+    cursor off of it, it goes back to white.
+*/
+
+.main-nav a {
+    padding: 4px 24px;
+    background-color: white;
+    color: black;
+    font-size: large;
+    font-family: 'Lexend Mega', sans-serif;
+    letter-spacing: -2px;
+    border: 1px;
+    border-style: solid;
+    transition: 0.2s ease;
+}
+
+
+/*
+    "bar" turns black when hovered,
+    text turns white for visibility
+*/
+
+.main-nav a:hover {
+    background-color: black;
+    color: white;
+}
+
+
+/* HOME - MAIN CONTENT */
+
+
+/*
+    all text elements under this tag will use the Roboto font
+    unless specified.
+    a margin-bottom is used to add a margin between the content and the footer
+*/
+
+.ss-container {
+    margin-top: 20px;
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+}
+
+.ss-container img {
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    box-shadow: 1px 1px 5px grey;
+}
+
+.slideimage {
+    display: none;
+}
+
+#previousbutton, #nextbutton {
+    margin-left: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    border-color: #2e2e2e;
+    border-radius: 50%;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    width: 75px;
+    opacity: 60%;
+    background-color: #2e2e2e;
+    color: white;
+    font-size: x-large;
+    border: 0px transparent;
+}
+
+#previousbutton:hover {
+    background-color: black;
+}
+
+
+#nextbutton {
+    right: 0;
+    position: absolute;
+}
+
+#nextbutton:hover {
+    background-color: black;
+}
+
+.bookcontent {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 25px;
+}
+
+
+.bookcontent h1 {
+    font-size: 2em;
+    border-bottom: black 3px solid;
+}
+
+/*
+    display: flex allows all of the images to form a single row 
+*/
+
+.galleryinner {
+    display: flex;
+    justify-content: center;
+}
+
+
+/*
+    overflow: hidden removes the scroll bar from certain images
+    max-height and max width specifies a maximum resolution limit
+    this makes it so images display at the specified limit
+
+    i had to specify the height as certain images were too small
+*/
+.gallery img {
+    overflow: hidden;
+    width: 100%;
+    height: 320px;
+    max-height: 320px;
+    max-width: 300px;
+}
+
+
+/*
+    margin: auto creates the space between each image
+    transition is being used here to create a shadow effect that appears
+    behind the image when being hovered
+*/
+.gallery {
+    background-color: #D9D9D9;
+    margin: auto;
+    border: solid 2px;
+    transition: 0.2s ease;
+}
+
+.gallery:hover {
+    box-shadow: 4px 4px #A1A1A1;
+    cursor: pointer;
+}
+
+/*
+    removes the margin from both elements
+*/
+
+.caption p, h2 {
+    color: black;
+    margin: 0;
+}
+
+/*
+    For some reason, the caption text shows up as purple
+    i don't know why, but surrounding it with anchor tags does it
+    and using a:visited to set it to its default color doesn't work
+    hardcoding it to be black seems to work.
+*/
+
+.caption h2 {
+    font-size: 1.25em;
+}
+
+
+/*
+    float: right positions the text to the right
+    relative to its parent (gallery)
+    
+    padding used to add a small "margin"
+*/
+
+.price {
+    font-size: 1.5em;
+    font-weight: bold;
+    float: right;
+    padding: 5px;
+}
+
+.caption h2:visited, caption h2:visited {
+    color: black;
+}
+
+
+/* FOOTER NAVIGATION */
+
+/*
+    positioning elements were difficult so i had to use
+    display: block
+
+    padding-top adds some extra space between the content and the
+    bookcontents margin
+*/
+footer {
+    background-color: black;
+    display: block;
+    padding-top: 2em;
+}
+
+
+/* list-style-type gets rid of the bullet points */
+footer li {
+    list-style-type: none;
+    padding: 5px;
+}
+
+footer h1 {
+    font-family: 'Lexend Mega', sans-serif;
+    font-size: larger;
+}
+
+footer h1, footer p, footer a { 
+    color: white;
+}
+
+footer p, footer a {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* footerinfo acts as a container of the contents, similar to bookcontents 
+    a margin is set on the left and right side at 10%
+
+    padding-left distances the content from the vertical line before it
+*/
+.footerinfo {
+    display: inline-block;
+    margin: 0 10% 0 10%;
+    border-left: 1px solid;
+    border-color: white;
+    padding-left: 1em;
+    
+}
+
+/*
+    transition effect similar to the header
+*/
+.footerinfo a {
+    transition: 0.2s ease;
+}
+
+.footerinfo a:hover {
+    color: #53E2FF;
+}
+
+/* adds a margin to the left to distance itself from the
+    "help & information" section
+*/
+#account {
+    margin: 0 10% 0 0;
+}
+
+/*
+    I'm not sure why this works.
+    I don't understand how this works.
+    I've tried really hard to understand how this works.
+    All I know is that setting #contact to position: absolute
+    somehow works to position the "follow us" 
+    section right after the contact us section.
+    The contents on the footer might be off-center.
+*/
+    
+#contact {
+    position: absolute;
+}
+    
+#follow {
+    float: right;
+}
+    
+/*
+    small copyright text centered on the middle at the 
+    very bottom of the page.
+*/
+
+.copyright {
+    font-size: 0.7em;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+   
+
+/* 
+    the next three classes modifies the icons
+    imported from Font Awesome. I change the colour
+    to fit with the black/white backgrounds, otherwise
+    they wouldn't be visible.
+
+    additional padding is added to distance itself
+    from the content associated with it
+*/
+    
+.fas {
+    display: flex;
+    justify-content: center;
+    padding: 0.5em;
+    color: white;
+}
+    
+.fab {
+    padding-right: 0.3em;
+    color: white;
+ }
+    
+.far {
+    color: white;
+    padding-right: 0.4em;
+}
+
+#errortriangle {
+    justify-content: unset;
+    color: #de3826;
+    padding: unset;
+}
+
+#successtick {
+    justify-content: unset;
+    color: green;
+    padding: unset;
+}
+
+/* this implementation is impractical but it works
+    this moves the "mail" and "phone" icons in the 
+    contact page right besides the email address and phone number
+
+*/
+
+
+/* CONTACT PAGE */
+
+/* 
+    ID selector specifically created to change the colour and
+    position of icons
+*/
+
+#whitebg {
+    color:black;
+    position: relative;
+    float: left;
+    top: 10px;
+}
+
+#whitebg2 {
+    color:black;
+    position: relative;
+    float: left;
+    bottom: 10px;
+}
+
+
+/*
+    modifies the text containing contact information
+    on the Contact page
+*/
+
+.detailscontainer {
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+.detailscontainer h1 {
+    font-size: 2.5em;
+    border-bottom: black 3px solid;
+}
+
+.detailscontainer a, p {
+    color: black;
+    font-weight: bold;
+}
+
+
+/* FORMS */
+
+/* formcontent is a container for the form itself
+    the input type can also be specified to specifically
+    target input fields based on their type. 
+*/
+.formcontent {
+    padding: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+/*
+    This modifies all input fields with the type "text"
+    and the "textarea" field box
+
+    resize refers to the "widget" on the corner of the text box
+    that allows you to resize it.
+    setting it to vertical only allows the user to resize the
+    box on the vertical axis.
+*/
+.formcontent input[type=text], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    resize: vertical;
+    font-family: 'Roboto', sans-serif;
+}
+
+.formbox {
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+#errorfname {
+    margin-top: 5px;
+    color: #de3826;
+    display: none;
+}
+
+#errorlname {
+    margin-top: 5px;
+    color: #de3826;
+    display: none;
+}
+
+#errormail {
+    margin-top: 5px;
+    color: #de3826;
+    display: none;
+}
+
+#errorsub {
+    margin-top: 5px;
+    color: #de3826;
+    display: none;
+}
+
+#successmessage {
+    margin-top: 5px;
+    color: green;
+    display: none;
+}
+
+/*
+    This styles the Submit button of the form
+    padding is used to centralise the Submit text
+*/
+
+.formcontent input[type=button] {
+    background-color: white;
+    font-family: 'Lexend Mega', sans-serif;
+    letter-spacing: -3px;
+    font-size: 20px;
+    color: black;
+    padding: 12px 20px;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+    
+.formcontent input[type=button]:hover {
+    background-color: black;
+    color: white;
+}
+
+#browser {
+    color: black;
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Brilliant Books</title>
+
+        <!--
+            The link tags below contains links to fonts from Google Fonts
+            I have also included an icon set from Font Awesome
+            All CSS is stored in style.css
+        -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/3b9c5fd033.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="formvalidation.js"></script>
+    </head>
+    <body>
+
+        <!--
+            The header container essentially "contains" everything.
+            It acts as the parent DIV element to make changes globally across
+            all elements in its scope.
+        -->
+        <div class="header-container">
+            <header>
+
+                <!--
+                    This displays the logo stored in the images file.
+                    Clicking on the logo redirects you to the home page.
+                    Line 39 creates a search box, with a placeholder attribute to
+                    display placeholder text
+                -->
+                <a href="index.html">
+                    <img src="images/booklogo.png" alt="bblogo">
+                </a>
+                <input type="text" placeholder="Search...">
+                
+                <!-- 
+                    "i class=fas" is the icon set imported from Font Awesome
+                    as mentioned above. I will be using some of these later.
+                    Using an anchor tag over them allows the user to click the icons
+                    instead of having to click on the text to enter the next webpage
+                -->
+                <a href="#">
+                    <i class="fas fa-user fa-2x" id="user"></i>
+                        My Account
+                    </a>
+                <a href="#">
+                    <i class="fas fa-shopping-cart fa-2x"></i>
+                        Cart
+                </a>
+            </header>
+            
+
+            <!-- 
+                Basic navigation menu created with NAV
+                nav elements CAN be in a header element
+                i just chose not to
+            -->
+            <nav class="main-nav">
+                <a href="#">New</a>
+                <a href="#">Browse By Genre</a>
+                <a href="#">Trending</a>
+                <a href="#">Fiction</a>
+                <a href="#">Non-Fiction</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+        
+        <!-- 
+            Container works the same as index.html
+            detailscontainer just holds text
+        -->
+        <div class="container">
+            <section class="detailscontainer">
+                <h1>CONTACT US</h1>
+                <h2>You can contact us by using the email address or phone number provided below.</h2>
+                <i class="fas fa-envelope" id="whitebg"></i>
+                <p><a href="mailto:johndoe@brilliantbooks.com">johndoe@brilliantbooks.com</a></p>
+                <i class="fas fa-phone-alt" id="whitebg2"></i>
+                <p>01632 960175</p>
+                <br><br>
+
+                <!-- This is specifically given an ID to adjust its font size -->
+                <h1 id="formheader">Alternatively, you can write your concerns down on the form below...</h1>
+            </section>
+
+            <!--
+                a form is created with a class called formcontent
+                This can be used to adjust position of input fields etc
+                input fields and their data types can be explicitly used as a CSS selector 
+            -->
+
+            <form class="formcontent" name="contactform" action="contact.html">
+                <!--label acts as a header-->
+                <div class="formbox">
+                    <label for="fname">First Name:</label>
+                    <!--field for user input, asking for first name with placeholder text that vanishes when active, required enables data validation by requiring the user to input data before submitting-->
+                    <input type="text" id="fname" name="firstname" placeholder="Enter your first name..">
+                    <p id="errorfname">
+                        <i class="fas fa-exclamation-triangle" id="errortriangle"></i>
+                        You have left this field empty!
+                    </p>
+
+                </div>
+                
+                <!-- These ones just ask for the Last Name and Email Address -->
+                <div class="formbox">
+                    <label for="lname">Last Name:</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Enter your last name..">
+                    <p id="errorlname">
+                        <i class="fas fa-exclamation-triangle" id="errortriangle"></i>
+                        You have left this field empty!
+                    </p>
+                
+                </div>
+
+                <div class="formbox">
+                    <label for="email">E-mail Address:</label>
+                    <input type="text" id="email" name="emailadd" placeholder="Enter your e-mail address..">
+                    <p id="errormail">
+                        <i class="fas fa-exclamation-triangle" id="errortriangle"></i>
+                        You have left this field empty!
+                    </p>
+                    
+                </div>
+                    
+                <div class="formbox">
+                    <label for="subject">Subject:</label>
+                    <!--creates a large text field that allows the user to write any concerns-->
+                    <textarea id="subject" name="subject" placeholder="Write your concerns in here.." style="height: 200px;"></textarea>
+                    <p id="errorsub">
+                        <i class="fas fa-exclamation-triangle" id="errortriangle"></i>
+                        You have left this field empty!
+                    </p>
+                </div>
+                <!--submit button that returns information-->
+                <input type="button" onclick="formValidation(contactform)" value="SUBMIT">
+            </form>		
+        </div>
+            
+
+        <!--
+            Basic footer created using the footer element
+            This will serve as a secondary navigation menu
+            It uses anchor tags encased in li tags
+        -->
+        <footer>
+            <div class="footerinfo">
+                <h1>HELP & INFORMATION</h1>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Shops</a></li>
+                <li><a href="#">Delivery Information</a></li>
+                <li><a href="#">Gift Cards</a></li>
+            </div>
+
+            <!-- 
+                IDs are used to make specific changes to position
+                these elements using the margin property
+            -->
+            <div class="footerinfo" id="account">
+                <h1>ACCOUNT</h1>
+                <li><a href="#">My Account</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Track An Order</a></li>
+                <li><a href="#">Returns & Refunds</a></li>
+            </div>
+
+            <div class="footerinfo" id="contact">
+                <h1>CONTACT US</h1>
+                <p><a href="mailto:johndoe@brilliantbooks.com">johndoe@brilliantbooks.com</a></p>
+                <p>01632 960175</p>
+            </div>
+            
+            <!--
+                "i class="fab"" displays icons for respective
+                social media sites
+            -->
+            <div class="footerinfo" id="follow">
+                <h1>FOLLOW US</h1>
+                <a href="https://www.twitter.com"><i class="fab fa-twitter fa-2x"></a></i>
+                <a href="https://www.facebook.com"><i class="fab fa-facebook fa-2x"></a></i>
+                <a href="https://www.instagram.com"></a><i class="fab fa-instagram fa-2x"></a></i>
+            </div>
+
+            <!--
+                i didnt have to do this but i did it anyway
+            -->
+            <div class="copyright">
+                <i class="far fa-copyright"></i>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                    <p>Copyright 2021-2021 Brilliant Books. All rights reserved.</p>
+                </a>
+            </div>
+        </footer>
+    </body>
+</html>
